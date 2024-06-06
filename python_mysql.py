@@ -46,11 +46,16 @@ def register_schueler(conn):
     if zustimmung == "1":
         print("Speicherung Personenbezogener Daten zugestimmt.")
         username = input("Geben Sie den Benutzernamen ein: ")
+        # Passwort-Eingabe und Bestätigung
         while True:
             password = input("Geben Sie das Passwort ein: ")
             password_confirm = input("Geben Sie das Passwort erneut ein: ")
             if password == password_confirm:
-                break
+                # Passwort darf max. 16 Zeichen enthalten
+                if len(password) <= 16:
+                    break
+                else:
+                    print("Das Passwort darf nicht länger als 16 Zeichen sein.")
             else:
                 print("Passwörter stimmen nicht überein. Bitte erneut eingeben.")
         wunschberuf = input("Geben Sie den Wunschberuf ein: ")
@@ -78,7 +83,11 @@ def register_betrieb(conn):
             password = input("Geben Sie das Passwort ein: ")
             password_confirm = input("Geben Sie das Passwort erneut ein: ")
             if password == password_confirm:
-                break
+                # Passwort darf max. 16 Zeichen enthalten
+                if len(password) <= 16:
+                    break
+                else:
+                    print("Das Passwort darf nicht länger als 16 Zeichen sein.")
             else:
                 print("Passwörter stimmen nicht überein. Bitte erneut eingeben.")
     strasse = input("Geben Sie die Straße ein: ")
