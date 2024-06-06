@@ -104,8 +104,8 @@ def main():
         create_tables(conn)
 
         # Benutzerentscheidung für Login oder Registrierung
-        print("Möchten Sie sich Anmelden(1) oder Registrieren(2)? ")
-        auswahl_typ = input("Bitte wählen Sie 1 oder 2: ")
+        print("Möchten Sie sich Anmelden(1), Registrieren(2) oder Abbrechen(3)? ")
+        auswahl_typ = input("Bitte wählen Sie (1), (2) oder (3): ")
 
         if auswahl_typ == '1':
             print("Login:")
@@ -125,6 +125,9 @@ def main():
                 register_betrieb(conn)
             else:
                 print("Ungültige Auswahl")
+        elif auswahl_typ == '3':
+            print("Abbruch")
+            return
         else:
             print("Ungültige Auswahl")
 
