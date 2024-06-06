@@ -53,7 +53,6 @@ def register_schueler(conn):
                 break
             else:
                 print("Passwörter stimmen nicht überein. Bitte erneut eingeben.")
-
         wunschberuf = input("Geben Sie den Wunschberuf ein: ")
         strasse = input("Geben Sie die Straße ein: ")
         ort = input("Geben Sie den Ort ein: ")
@@ -75,7 +74,13 @@ def register_schueler(conn):
 # Funktion zur Registrierung eines neuen Betriebs
 def register_betrieb(conn):
     username = input("Geben Sie den Benutzernamen ein: ")
-    password = input("Geben Sie das Passwort ein: ")
+    while True:
+            password = input("Geben Sie das Passwort ein: ")
+            password_confirm = input("Geben Sie das Passwort erneut ein: ")
+            if password == password_confirm:
+                break
+            else:
+                print("Passwörter stimmen nicht überein. Bitte erneut eingeben.")
     strasse = input("Geben Sie die Straße ein: ")
     ort = input("Geben Sie den Ort ein: ")
 
