@@ -1,2 +1,0 @@
-SELECT schuelerid, username_schueler, password_schueler, wunschberuf, strasse, ort
-from praktikumsplattform.schueler
