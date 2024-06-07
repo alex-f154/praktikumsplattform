@@ -1,37 +1,6 @@
-import sys
-import os
-import mysql.connector
-from mysql.connector import Error
+from sql_connector import create_connection
 from registrierung import register_betrieb, register_schueler
-
-# Funktion zur Erstellung einer Verbindung zur MySQL-Datenbank
-def create_connection(host_name, user_name, user_password, db_name):
-    connection = None
-    try:
-        connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            database="praktikumsplattform"
-        )
-        print("Verbindung zur MySQL-Datenbank erfolgreich")
-    except Error as e:
-        print(f"Fehler bei der Verbindung zur MySQL-Datenbank: {e}")
-    return connection
-
-# Funktion für den Login
-def login(conn, table, username_column, password_column):
-    username = input("Geben Sie den Benutzernamen ein: ")
-    password = input("Geben Sie das Passwort ein: ")
-    
-    sql = f"SELECT * FROM {table} WHERE {username_column} = %s AND {password_column} = %s"
-    cursor = conn.cursor()
-    cursor.execute(sql, (username, password))
-    result = cursor.fetchone()
-    
-    if result:
-        print("Login erfolgreich")
-    else:
-        print("Benutzername oder Passwort falsch")
+from login import login
 
 # Hauptfunktion zum Ausführen des Programms
 def main():
