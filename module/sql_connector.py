@@ -8,7 +8,7 @@ def create_connection(host_name, user_name, user_password, db_name):
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            database="praktikumsplattform"
+            database="Praktikumsplattform"
         )
         print("Verbindung zur MySQL-Datenbank erfolgreich")
     except Error as e:
