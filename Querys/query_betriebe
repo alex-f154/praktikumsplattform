@@ -1,2 +1,2 @@
-SELECT betriebid, username_betrieb, password_betrieb, strasse, ort
-from praktikumsplattform.betriebe
+SELECT BetriebID, Username_Betrieb, Passwort, Strasse, Ort
+from praktikumsplattform.betrieb
