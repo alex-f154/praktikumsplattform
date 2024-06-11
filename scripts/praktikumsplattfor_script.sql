@@ -6,7 +6,7 @@ CREATE TABLE Betrieb (
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Betrieb VARCHAR(100),
-    Passwort VARCHAR(100)
+    Passwort_Betrieb VARCHAR(100)
 );
  
 CREATE TABLE Schueler (
@@ -15,7 +15,7 @@ CREATE TABLE Schueler (
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Schueler VARCHAR(100),
-    Passwort VARCHAR(100)
+    Passwort_Schueler VARCHAR(100)
 );
  
 CREATE TABLE Praktikumsplatz (
