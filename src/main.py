@@ -10,7 +10,7 @@ from login import login
 # Hauptfunktion zum Ausführen des Programms
 def main():
     database = "praktikumsplattform"
-    conn = create_connection("localhost", "dein_benutzername", "dein_passwort", database)
+    conn = create_connection("localhost", "root", "", database)
 
     if conn is not None:
 
@@ -22,9 +22,9 @@ def main():
             print("Login:")
             auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? ")
             if auswahl_art == '1':
-                login(conn, 'schueler', 'username_schueler', 'password_schueler')
+                login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
             elif auswahl_art == '2':
-                login(conn, 'betriebe', 'username_betrieb', 'password_betrieb')
+                login(conn, 'betriebe', 'Username_Betrieb', 'Passwort_Betrieb')
             else:
                 print("Ungültige Auswahl")
         elif auswahl_typ == '2':

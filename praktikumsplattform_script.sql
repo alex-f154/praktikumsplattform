@@ -1,19 +1,12 @@
 CREATE DATABASE Praktikumsplattform;
 USE Praktikumsplattform;
 
-CREATE TABLE Ort (
-    OrtID INT PRIMARY KEY,
-    OrtName VARCHAR(100),
-    PLZ VARCHAR(10)
-);
-
 CREATE TABLE Betrieb (
     BetriebID INT PRIMARY KEY,
     Strasse VARCHAR(100),
     Username_Betrieb VARCHAR(100),
-    Passwort VARCHAR(100),
-    OrtID INT,
-    FOREIGN KEY (OrtID) REFERENCES Ort(OrtID)
+    Passwort_Betrieb VARCHAR(100),
+    Ort VARCHAR(100)
 );
 
 CREATE TABLE Schueler (
@@ -21,9 +14,8 @@ CREATE TABLE Schueler (
     Wunschberuf VARCHAR(100),
     Strasse VARCHAR(100),
     Username_Schueler VARCHAR(100),
-    Passwort VARCHAR(100),
-    OrtID INT,
-    FOREIGN KEY (OrtID) REFERENCES Ort(OrtID)
+    Passwort_Schueler VARCHAR(100),
+    Ort VARCHAR(100)
 );
 
 CREATE TABLE Praktikumsplatz (

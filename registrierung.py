@@ -21,7 +21,7 @@ def register_schueler(conn):
         strasse = input("Geben Sie die Straße ein: ")
         ort = input("Geben Sie den Ort ein: ")
 
-        sql = '''INSERT INTO schueler (username_schueler, password_schueler, wunschberuf, strasse, ort) 
+        sql = '''INSERT INTO Schueler (Username_Schueler, Passwort_Schueler, Wunschberuf, Strasse, Ort) 
              VALUES (%s, %s, %s, %s, %s)'''
         cursor = conn.cursor()
         cursor.execute(sql, (username, password, wunschberuf, strasse, ort))
@@ -52,7 +52,7 @@ def register_betrieb(conn):
     strasse = input("Geben Sie die Straße ein: ")
     ort = input("Geben Sie den Ort ein: ")
 
-    sql = '''INSERT INTO betriebe (username_betrieb, password_betrieb, strasse, ort) 
+    sql = '''INSERT INTO Betrieb (Username_Betrieb, Passwort_Betrieb, Strasse, Ort)
              VALUES (%s, %s, %s, %s)'''
     cursor = conn.cursor()
     cursor.execute(sql, (username, password, strasse, ort))
