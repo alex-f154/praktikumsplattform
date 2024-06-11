@@ -15,7 +15,10 @@ def main():
     if conn is not None:
 
         # Benutzerentscheidung für Login oder Registrierung
-        print("Möchten Sie sich Anmelden(1), Registrieren(2) oder Abbrechen(3)? ")
+        print("Möchten Sie sich: ")
+        print("Anmelden     (1)" )
+        print("Registrieren (2) ")
+        print("Abbrechen    (3) ")
         auswahl_typ = input("Bitte wählen Sie (1), (2) oder (3): ")
 
         if auswahl_typ == '1':
