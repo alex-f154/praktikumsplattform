@@ -1,9 +1,2 @@
-SELECT ortid, ortname, plz from praktikumsplattform.orte
-
-/*UPDATE praktikumsplattform.schueler
-SET username_schueler = 'Jonas Kaersten', 
-    password_schueler = '1234', 
-    wunschberuf = 'Schreiner', 
-    strasse = 'Lackaffenstrasse 33', 
-    ort = 'Leckaia'
-WHERE schuelerid = 1;
+SELECT Verfügbarkeit, Bezahlung, Zeitraum, Beruf
+from praktikumsplattform.praktikumsplatz

@@ -42,6 +42,9 @@ def main():
         elif auswahl_typ == '3':
             print("Abbruch")
             return
+        elif auswahl_typ =="HWK-login":
+            print("ADMIN ANMELDUNG######s")
+            login(conn, 'HWK_kronenburg', 'Benutzername', 'Passwort')
         else:
             print("Ungültige Auswahl")
 
