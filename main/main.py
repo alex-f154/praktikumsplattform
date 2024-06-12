@@ -16,9 +16,9 @@ def main():
 
         # Benutzerentscheidung für Login oder Registrierung | HWK-Admin Anmeldung verborgen
         print("Möchten Sie sich: ")
-        print("Anmelden     (1)" )
-        print("Registrieren (2) ")
-        print("Abbrechen    (3) ")
+        print("Anmelden         (1)" )
+        print("Registrieren     (2) ")
+        print("Abbrechen        (3) ")
         auswahl_typ = input("Bitte wählen Sie (1), (2) oder (3): ")
 
         if auswahl_typ == '1':
