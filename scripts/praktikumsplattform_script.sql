@@ -1,29 +1,31 @@
 CREATE DATABASE Praktikumsplattform;
 USE Praktikumsplattform;
  
+ -- AUTO_INCREMENT = 1; setzen damit keine ID mit 0 belegt ist ausser bei Tabelle Bewerbungen
+
 CREATE TABLE Betrieb (
-    BetriebID INT PRIMARY KEY,
+    BetriebID INT AUTO_INCREMENT PRIMARY KEY,
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Betrieb VARCHAR(100),
-    Passwort_Betrieb VARCHAR(100));
+    Passwort_Betrieb VARCHAR(100)) AUTO_INCREMENT = 1;
  
 CREATE TABLE Schueler (
-    SchuelerID INT PRIMARY KEY,
+    SchuelerID INT AUTO_INCREMENT PRIMARY KEY,
     Wunschberuf VARCHAR(100),
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Schueler VARCHAR(100),
-    Passwort_Schueler VARCHAR(100));
+    Passwort_Schueler VARCHAR(100)) AUTO_INCREMENT = 1;
  
 CREATE TABLE Praktikumsplatz (
-    PlatzID INT PRIMARY KEY,
+    PlatzID INT AUTO_INCREMENT PRIMARY KEY,
     Verfügbarkeit DATE,
     Bezahlung BOOLEAN,
     Zeitraum VARCHAR(100),
     Beruf VARCHAR(100),
     BetriebID INT,
-    FOREIGN KEY (BetriebID) REFERENCES Betrieb(BetriebID));
+    FOREIGN KEY (BetriebID) REFERENCES Betrieb(BetriebID)) AUTO_INCREMENT = 1;
  
 CREATE TABLE HWK_Kronenburg (
     Benutzername VARCHAR(100) PRIMARY KEY,
@@ -34,7 +36,7 @@ CREATE TABLE Bewerbungen (
     PlatzID INT,
     PRIMARY KEY (SchuelerID, PlatzID),
     FOREIGN KEY (SchuelerID) REFERENCES Schueler(SchuelerID),
-    FOREIGN KEY (PlatzID) REFERENCES Praktikumsplatz(PlatzID));
+    FOREIGN KEY (PlatzID) REFERENCES Praktikumsplatz(PlatzID)) AUTO_INCREMENT = 1;
  
 INSERT INTO Betrieb VALUES 
 (1,"Olgastrasse 45","Heilbronn","Papier GmbH","Paperclip12."),
