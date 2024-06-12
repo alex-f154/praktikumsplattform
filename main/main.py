@@ -1,7 +1,3 @@
-# Module importieren, die für die Steuerung mit der Python-Runtime sowie Betriebssystem nötig sind
-import sys
-import os
-
 # Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
 from backend.sql_connector import create_connection
 from backend.registrierung import register_schueler, register_betrieb
