@@ -19,9 +19,11 @@ def main():
         print("Anmelden         (1)" )
         print("Registrieren     (2) ")
         print("Abbrechen        (3) ")
-        auswahl_typ = input("Bitte wählen Sie (1), (2) oder (3): ")
+        print(" ")
+        auswahl_typ = input("Auswahl: ")
 
         if auswahl_typ == '1':
+            print(" ")
             print("Login:")
             auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? ")
             if auswahl_art == '1':
@@ -31,6 +33,7 @@ def main():
             else:
                 print("Ungültige Auswahl")
         elif auswahl_typ == '2':
+            print(" ")
             print("Registrierung:")
             auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? ")
             if auswahl_art == '1':
@@ -38,14 +41,18 @@ def main():
             elif auswahl_art == '2':
                 register_betrieb(conn)
             else:
+                print(" ")
                 print("Ungültige Auswahl")
         elif auswahl_typ == '3':
+            print(" ")
             print("Abbruch")
             return
         elif auswahl_typ =="hwk-admin":
+            print(" ")
             print("HWK-Admin Anmeldung:")
             login(conn, 'HWK_kronenburg', 'Benutzername', 'Passwort')
         else:
+            print(" ")
             print("Ungültige Auswahl")
 
         conn.close()
