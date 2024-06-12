@@ -1,11 +1,14 @@
+# Module importieren, die für die Steuerung mit der Python-Runtime sowie Betriebssystem nötig sind
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../module')))
+# Fügt den Pfad des 'module'-Ordners zum Python-Suchpfad hinzu. Dies ermöglicht das Importieren von Modulen aus dem 'module'-Ordner.
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'module')))
 
-from sql_connector import create_connection
-from registrierung import register_betrieb, register_schueler
-from login import login
+# Importieren der benutzerdefinierten Module aus dem 'module'-Ordner
+from sql_connector import create_connection # type: ignore
+from registrierung import register_schueler, register_betrieb # type: ignore
+from login import login # type: ignore
 
 # Hauptfunktion zum Ausführen des Programms
 def main():
@@ -14,7 +17,7 @@ def main():
 
     if conn is not None:
 
-        # Benutzerentscheidung für Login oder Registrierung
+        # Benutzerentscheidung für Login oder Registrierung | HWK-Admin Anmeldung verborgen
         print("Möchten Sie sich: ")
         print("Anmelden     (1)" )
         print("Registrieren (2) ")
@@ -42,8 +45,8 @@ def main():
         elif auswahl_typ == '3':
             print("Abbruch")
             return
-        elif auswahl_typ =="HWK-login":
-            print("ADMIN ANMELDUNG######s")
+        elif auswahl_typ =="hwk-admin":
+            print("HWK-Admin Anmeldung:")
             login(conn, 'HWK_kronenburg', 'Benutzername', 'Passwort')
         else:
             print("Ungültige Auswahl")
