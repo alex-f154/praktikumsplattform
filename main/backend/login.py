@@ -10,5 +10,6 @@ def login(conn, table, username_column, password_column):
     
     if result:
         print("Login erfolgreich")
+        # funktion die zu einem Menüpunkt führt, da muss aber zwischen schüler betrieb und hwk getrennt werden
     else:
         print("Benutzername oder Passwort falsch")
