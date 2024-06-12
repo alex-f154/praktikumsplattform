@@ -25,17 +25,21 @@ def main():
         if auswahl_typ == '1':
             print(" ")
             print("Login:")
-            auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? ")
+            print(" ")
+            auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? \n \nAuswahl: ")
             if auswahl_art == '1':
+                print(" ")
                 login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
             elif auswahl_art == '2':
+                print(" ")
                 login(conn, 'betriebe', 'Username_Betrieb', 'Passwort_Betrieb')
             else:
                 print("Ungültige Auswahl")
         elif auswahl_typ == '2':
             print(" ")
             print("Registrierung:")
-            auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? ")
+            print(" ")
+            auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? Auswahl: ")
             if auswahl_art == '1':
                 register_schueler(conn)
             elif auswahl_art == '2':

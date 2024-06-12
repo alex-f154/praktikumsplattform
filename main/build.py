@@ -1,4 +1,4 @@
-import os
+# build-Skript um eine .exe Datei zu erstellen
 import shutil
 import subprocess
 import sys
@@ -8,10 +8,10 @@ def build_exe():
     # Pfad zum main.py-Skript
     script_path = "main.py"
 
-    # Find the pyinstaller executable from the current environment
+    # "pyinstaller.exe"-Pfad in aktueller Umgebung finden
     pyinstaller_path = shutil.which("pyinstaller")
     if pyinstaller_path is None:
-        print("PyInstaller is not installed or not found in the PATH.")
+        print("PyInstaller ist nicht installiert oder wurde nicht im Pfad gefunden.")
         sys.exit(1)
 
     # Ausführbare Datei erstellen
@@ -23,17 +23,6 @@ def build_exe():
         "--paths", ".",  # Add the current directory to the search path
     ])
     print("build finished")
-
-    # # Zielverzeichnis für die ausführbare Datei
-    # target_dir = "."
-
-    # # Pfad zur erzeugten ausführbaren Datei
-    # exe_path = os.path.join("dist", os.listdir("dist")[0])
-    # print("build generated in " + exe_path)
-
-    # # Kopiere die ausführbare Datei in das Zielverzeichnis
-    # shutil.move(exe_path, target_dir)
-    # print("build moved to " + target_dir)
 
 if __name__ == "__main__":
     build_exe()
