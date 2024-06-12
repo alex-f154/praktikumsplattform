@@ -6,8 +6,7 @@ CREATE TABLE Betrieb (
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Betrieb VARCHAR(100),
-    Passwort_Betrieb VARCHAR(100)
-);
+    Passwort_Betrieb VARCHAR(100));
  
 CREATE TABLE Schueler (
     SchuelerID INT PRIMARY KEY,
@@ -15,8 +14,7 @@ CREATE TABLE Schueler (
     Strasse VARCHAR(100),
     Ort VARCHAR(100),
     Username_Schueler VARCHAR(100),
-    Passwort_Schueler VARCHAR(100)
-);
+    Passwort_Schueler VARCHAR(100));
  
 CREATE TABLE Praktikumsplatz (
     PlatzID INT PRIMARY KEY,
@@ -25,21 +23,18 @@ CREATE TABLE Praktikumsplatz (
     Zeitraum VARCHAR(100),
     Beruf VARCHAR(100),
     BetriebID INT,
-    FOREIGN KEY (BetriebID) REFERENCES Betrieb(BetriebID)
-);
+    FOREIGN KEY (BetriebID) REFERENCES Betrieb(BetriebID));
  
 CREATE TABLE HWK_Kronenburg (
     Benutzername VARCHAR(100) PRIMARY KEY,
-    Passwort VARCHAR(100)
-);
+    Passwort VARCHAR(100));
  
 CREATE TABLE Bewerbungen (
     SchuelerID INT,
     PlatzID INT,
     PRIMARY KEY (SchuelerID, PlatzID),
     FOREIGN KEY (SchuelerID) REFERENCES Schueler(SchuelerID),
-    FOREIGN KEY (PlatzID) REFERENCES Praktikumsplatz(PlatzID)
-);
+    FOREIGN KEY (PlatzID) REFERENCES Praktikumsplatz(PlatzID));
  
 INSERT INTO Betrieb VALUES 
 (1,"Olgastrasse 45","Heilbronn","Papier GmbH","Paperclip12."),
@@ -58,26 +53,22 @@ INSERT INTO Schueler VALUES
 (7,"Erzieherin","Hafenstraße 33","Heilbronn","Beatriz Lopez","backFromThailand"),
 (8,"Polizist","Adolfstraße 2","Feuerbach","Murat Topac","DeutschlandBeste123"),
 (9,"Zerspanungsmechaniker","Bahnhofstrasse 74","Frankfurt","Sofian Khalaila","Doppelapfelx2"),
-(10,"Fachkraft für Lagerlogistik","Palisadenweg 5","Leipzig","Viktor Smirnov","workin4Jeffiscool")
-;
+(10,"Fachkraft für Lagerlogistik","Palisadenweg 5","Leipzig","Viktor Smirnov","workin4Jeffiscool");
  
 INSERT INTO Praktikumsplatz VALUES
 (1,'2024-10-01',FALSE,"3 Monate","Schreiner",5),
 (2,'2024-09-01',TRUE,"4 Monate","Anlagenmechaniker",4),
 (3,'2024-09-01',TRUE,"4 Monate","Kaufmann für Büromanagement",1),
 (4,'2024-09-15',FALSE,"4 Wochen","Koch",3),
-(5,'2024-10-01',TRUE,"2 Monate","Fachinformatiker für Systemintegration",2)
-;
+(5,'2024-10-01',TRUE,"2 Monate","Fachinformatiker für Systemintegration",2);
  
 INSERT INTO HWK_Kronenburg VALUES
 ("Admin","adminadmin123"),
-("ITSOL_extern","externinternusw")
-;
+("ITSOL_extern","externinternusw");
  
 INSERT INTO Bewerbungen VALUES
 (1,3),
 (10,4),
 (3,1),
 (8,4),
-(5,5)
-;
+(5,5);
