@@ -2,13 +2,10 @@
 import sys
 import os
 
-# Fügt den Pfad des 'module'-Ordners zum Python-Suchpfad hinzu. Dies ermöglicht das Importieren von Modulen aus dem 'module'-Ordner.
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'module')))
-
-# Importieren der benutzerdefinierten Module aus dem 'module'-Ordner
-from backend.sql_connector import create_connection # type: ignore
-from backend.registrierung import register_schueler, register_betrieb # type: ignore
-from backend.login import login # type: ignore
+# Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
+from backend.sql_connector import create_connection
+from backend.registrierung import register_schueler, register_betrieb
+from backend.login import login
 
 # Hauptfunktion zum Ausführen des Programms
 def main():
