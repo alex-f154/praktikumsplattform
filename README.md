@@ -56,31 +56,6 @@ Unser Ziel ist die Entwicklung einer Anwendung in Python, die eine SQL-Datenbank
    - Überwachen die Analyse der Berufsnachfrage.
    - Setzen Empfehlungen für Werbemaßnahmen um.
 
-## Installation und Einrichtung
-
-### Voraussetzungen
-
-- Python 3.x
-- Eine SQL-Datenbank (z.B. MySQL, PostgreSQL)
-- Abhängigkeiten, die in `requirements.txt` aufgeführt sind
-
-### Installation
-
-1. **Python und Abhängigkeiten installieren:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Datenbank einrichten:**
-
-   - Erstellen Sie eine neue SQL-Datenbank.
-   - Führen Sie die SQL-Skripte aus dem Ordner `db` aus, um die erforderlichen Tabellen zu erstellen.
-
-3. **Konfiguration:**
-
-   - Passen Sie die Datenbankeinstellungen in der Datei `config.py` an.
-
 ### Starten der Anwendung
 
 ```bash
