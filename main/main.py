@@ -14,12 +14,12 @@ def main():
             print("Möchten Sie sich:")
             print("1) Anmelden")
             print("2) Registrieren")
-            print("3) Abbrechen \n")
+            print("3) Abbrechen")
             auswahl_typ = input("Auswahl: ")
 
             if auswahl_typ == '1':
-                print("Login: \n")
-                auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? \n \nAuswahl: ")
+                print("\nLogin: ")
+                auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? \nAuswahl: ")
                 if auswahl_art == '1':
                     user_type = login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
                     if user_type:
@@ -32,7 +32,7 @@ def main():
                     print("Ungültige Auswahl \n")
             elif auswahl_typ == '2':
                 print("Registrierung: \n")
-                auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? \n \nAuswahl: ")
+                auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? \nAuswahl: ")
                 if auswahl_art == '1':
                     register_schueler(conn)
                 elif auswahl_art == '2':

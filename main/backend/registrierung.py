@@ -1,22 +1,22 @@
 # Funktion zur Registrierung eines neuen Schülers
 def register_schueler(conn):
-    zustimmung = input("Stimmen Sie der Speicherung personenbezogener Daten zu? Ja(1), Nein(2) ")
+    zustimmung = input("Stimmen Sie der Speicherung personenbezogener Daten zu?\n1) Ja \n2) Nein\n")
 
     if zustimmung == "1":
         print("Speicherung Personenbezogener Daten zugestimmt.")
         username = input("Geben Sie den Benutzernamen ein: ")
         # Passwort-Eingabe und Bestätigung
         while True:
-            password = input("Geben Sie das Passwort ein: ")
-            password_confirm = input("Geben Sie das Passwort erneut ein: ")
+            password = input("Geben Sie das Passwort ein (max. 16 Zeichen): ")
+            password_confirm = input("Geben Sie das Passwort erneut ein (max. 16 Zeichen): ")
             if password == password_confirm:
                 # Passwort darf max. 16 Zeichen enthalten
                 if len(password) <= 16:
                     break
                 else:
-                    print("Das Passwort darf nicht länger als 16 Zeichen sein.")
+                    print("Das Passwort darf nicht länger als 16 Zeichen sein.\n")
             else:
-                print("Passwörter stimmen nicht überein. Bitte erneut eingeben.")
+                print("Passwörter stimmen nicht überein. Bitte erneut eingeben.\n")
         wunschberuf = input("Geben Sie den Wunschberuf ein: ")
         strasse = input("Geben Sie die Straße ein: ")
         ort = input("Geben Sie den Ort ein: ")
@@ -26,14 +26,14 @@ def register_schueler(conn):
         cursor = conn.cursor()
         cursor.execute(sql, (username, password, wunschberuf, strasse, ort))
         conn.commit()
-        print("Schüler erfolgreich registriert")
+        print("Schüler erfolgreich registriert \n")
 
     elif zustimmung == "2":
-        print("Registrierung abgebrochen")
+        print("Registrierung abgebrochen \n")
         return
     
     else:
-        print("Ungültige Eingabe. Registrierung abgebrochen.")
+        print("Ungültige Eingabe. Registrierung abgebrochen.\n")
 
 # Funktion zur Registrierung eines neuen Betriebs
 def register_betrieb(conn):
