@@ -1,11 +1,7 @@
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../module')))
-
-from sql_connector import create_connection
-from registrierung import register_betrieb, register_schueler
-from login import login
+# Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
+from backend.sql_connector import create_connection
+from backend.registrierung import register_schueler, register_betrieb
+from backend.login import login
 
 # Hauptfunktion zum Ausführen des Programms
 def main():
@@ -14,38 +10,52 @@ def main():
 
     if conn is not None:
 
-        # Benutzerentscheidung für Login oder Registrierung
+        # Benutzerentscheidung für Login oder Registrierung | HWK-Admin Anmeldung verborgen
         print("Möchten Sie sich: ")
-        print("Anmelden     (1)" )
-        print("Registrieren (2) ")
-        print("Abbrechen    (3) ")
-        auswahl_typ = input("Bitte wählen Sie (1), (2) oder (3): ")
+        print("1) Anmelden" )
+        print("2) Registrieren")
+        print("3) Abbrechen")
+        #print("Anmelden         (1)" )
+        #print("Registrieren     (2) ")
+        #print("Abbrechen        (3) ")
+        print(" ")
+        auswahl_typ = input("Auswahl: ")
 
         if auswahl_typ == '1':
+            print(" ")
             print("Login:")
-            auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? ")
+            print(" ")
+            auswahl_art = input("Sind Sie ein Schüler(1) oder ein Betrieb(2)? \n \nAuswahl: ")
             if auswahl_art == '1':
+                print(" ")
                 login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
             elif auswahl_art == '2':
+                print(" ")
                 login(conn, 'betriebe', 'Username_Betrieb', 'Passwort_Betrieb')
             else:
                 print("Ungültige Auswahl")
         elif auswahl_typ == '2':
+            print(" ")
             print("Registrierung:")
-            auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? ")
+            print(" ")
+            auswahl_art = input("Möchten Sie sich als Schüler(1) oder als Betrieb(2) registrieren? \n \nAuswahl: ")
             if auswahl_art == '1':
                 register_schueler(conn)
             elif auswahl_art == '2':
                 register_betrieb(conn)
             else:
+                print(" ")
                 print("Ungültige Auswahl")
         elif auswahl_typ == '3':
+            print(" ")
             print("Abbruch")
             return
-        elif auswahl_typ =="HWK-login":
-            print("ADMIN ANMELDUNG######s")
+        elif auswahl_typ =="hwk-admin":
+            print(" ")
+            print("HWK-Admin Anmeldung: \n")
             login(conn, 'HWK_kronenburg', 'Benutzername', 'Passwort')
         else:
+            print(" ")
             print("Ungültige Auswahl")
 
         conn.close()
