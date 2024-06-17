@@ -1,7 +1,7 @@
 # Funktion für den Login
 def login(conn, table, username_column, password_column):
-    username = input("Geben Sie den Benutzernamen ein: ").strip()
-    password = input("Geben Sie das Passwort ein: ").strip()
+    username = input("Geben Sie den Benutzernamen ein: ")
+    password = input("Geben Sie das Passwort ein: ")
     
     sql = f"SELECT * FROM {table} WHERE {username_column} = %s AND {password_column} = %s"
     cursor = conn.cursor()

@@ -2,10 +2,10 @@
 def schueler_menu():
     while True:
         print("\nSchüler Menü:")
-        print("1) Option 1")
-        print("2) Option 2")
-        print("3) Abmelden")
-        auswahl = input("Auswahl: ")
+        print("  1) Option 1")
+        print("  2) Option 2")
+        print("  3) Abmelden")
+        auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")
         elif auswahl == '2':
@@ -20,10 +20,10 @@ def schueler_menu():
 def betrieb_menu():
     while True:
         print("\nBetrieb Menü:")
-        print("1) Option 1")
-        print("2) Option 2")
-        print("3) Abmelden")
-        auswahl = input("Auswahl: ")
+        print("  1) Option 1")
+        print("  2) Option 2")
+        print("  3) Abmelden")
+        auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")
         elif auswahl == '2':
@@ -38,10 +38,10 @@ def betrieb_menu():
 def hwk_menu():
     while True:
         print("\nHWK Menü:")
-        print("1) Option 1")
-        print("2) Option 2")
-        print("3) Abmelden")
-        auswahl = input("Auswahl: ")
+        print("  1) Option 1")
+        print("  2) Option 2")
+        print("  3) Abmelden")
+        auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")
         elif auswahl == '2':

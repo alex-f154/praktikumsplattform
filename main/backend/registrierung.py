@@ -1,10 +1,13 @@
 # Funktion zur Registrierung eines neuen Schülers
 def register_schueler(conn):
-    zustimmung = input("Stimmen Sie der Speicherung personenbezogener Daten zu?\n1) Ja \n2) Nein\n")
+    print("\nStimmen Sie der Speicherung personenbezogener Daten zu?")
+    print("  1) Ja")
+    print("  2) Nein")
+    zustimmung = input("\nAuswahl: ").strip()
 
     if zustimmung == "1":
         print("Speicherung Personenbezogener Daten zugestimmt.")
-        username = input("Geben Sie den Benutzernamen ein: ")
+        username = input("\nGeben Sie den Benutzernamen ein: ")
         # Passwort-Eingabe und Bestätigung
         while True:
             password = input("Geben Sie das Passwort ein (max. 16 Zeichen): ")
