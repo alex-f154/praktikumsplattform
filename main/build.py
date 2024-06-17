@@ -1,7 +1,6 @@
 import shutil
 import subprocess
 import sys
-import os
 
 def build_exe():
     # Pfad zum main.py-Skript
