@@ -16,6 +16,12 @@ def build_exe():
     # Setze Output-Pfad zu jetzigem Pfad, sodass die .exe im geradigen Pfad erstellt wird | os.getcwd erhält den Wert des gerade ausgewählten Pfades
     output_pfad = os.getcwd()
 
+    # name für die .exe datei setzen
+    exe_name = "Praktikumsplattform"
+
+    # pfad für die symbol-datei des programms
+    symbol_pfad = "logo.ico"
+
     # .exe-Datei bauen
     print("\n******************\nbuilding...\n******************\n") # bestätigung das es startet
     result = subprocess.run([
@@ -26,6 +32,8 @@ def build_exe():
         "--paths", ".",     # jetzigen pfad zur suche hinzufügen
         "--distpath", output_pfad,  # setze output pfad zu geradigem pfad
         "--specpath", output_pfad,  # setze die .spec-datei zu jetzigem pfad
+        "--name", exe_name, # setze den namen der exe
+        "--icon", symbol_pfad, # setze das symbol der exe
         "--noconfirm",      # bestätigung (y/n) überspringen
         "--clean",          # pyinstaller cache und temporäre dateien löschen
     ])
