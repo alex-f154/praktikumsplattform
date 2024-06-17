@@ -1,18 +1,18 @@
 # Funktion zur Anzeige des Hauptmenüs
 def display_main_menu():
     print("Möchten Sie sich:")
-    print("  1) Anmelden")
-    print("  2) Registrieren")
-    print("  3) Abbrechen")
+    print("  [1] Anmelden")
+    print("  [2] Registrieren")
+    print("  [3] Abbrechen")
     print()
 
 # Menü für Schüler
 def schueler_menu():
     while True:
         print("\nSchüler Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Option 1")
+        print("  [2] Option 2")
+        print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")
@@ -28,9 +28,9 @@ def schueler_menu():
 def betrieb_menu():
     while True:
         print("\nBetrieb Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Option 1")
+        print("  [2] Option 2")
+        print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")
@@ -46,9 +46,9 @@ def betrieb_menu():
 def hwk_menu():
     while True:
         print("\nHWK Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Option 1")
+        print("  [2] Option 2")
+        print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             print("Option 1 gewählt")

@@ -1,3 +1,5 @@
+import os
+
 # Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
 from backend.sql_connector import create_connection
 from backend.registrierung import register_schueler, register_betrieb
@@ -13,11 +15,12 @@ def main():
         while True:
             display_main_menu()
             auswahl_typ = input("Auswahl: ").strip()
+            os.system('cls') # 
 
             if auswahl_typ == '1':
                 print("\nLogin:")
-                print("  1) Schüler")
-                print("  2) Betrieb")
+                print("  [1] Schüler")
+                print("  [2] Betrieb")
                 auswahl_art = input("\nAuswahl: ").strip()
                 if auswahl_art == '1':
                     user_type = login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
@@ -31,8 +34,8 @@ def main():
                     print("\nUngültige Auswahl\n")
             elif auswahl_typ == '2':
                 print("\nRegistrierung:")
-                print("  1) Schüler")
-                print("  2) Betrieb")
+                print("  [1] Schüler")
+                print("  [2] Betrieb")
                 auswahl_art = input("\nAuswahl: ").strip()
                 if auswahl_art == '1':
                     register_schueler(conn)
