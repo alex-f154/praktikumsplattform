@@ -1,33 +1,39 @@
 import shutil
 import subprocess
 import sys
+import os
 
 def build_exe():
-    # Pfad zum main.py-Skript
+    # Pfad zum main.py Skript
     script_path = "main.py"
 
-    # "pyinstaller.exe"-Pfad in aktueller Umgebung finden
+    # Pfad für den pyinstaller.exe finden
     pyinstaller_path = shutil.which("pyinstaller")
     if pyinstaller_path is None:
-        print("PyInstaller ist nicht installiert oder wurde nicht im Pfad gefunden.")
+        print("PyInstaller ist nicht installiert oder wurde nicht gefunden!\n")
         sys.exit(1)
 
-    # Ausführbare Datei erstellen
-    print("\n******************\nbuilding...\n******************\n")
+    # Setze Output-Pfad zu jetzigem Pfad, sodass die .exe im geradigen Pfad erstellt wird | os.getcwd erhält den Wert des gerade ausgewählten Pfades
+    output_pfad = os.getcwd()
+
+    # .exe-Datei bauen
+    print("\n******************\nbuilding...\n******************\n") # bestätigung das es startet
     result = subprocess.run([
         pyinstaller_path,
         script_path,
-        "--collect-all",
-        "backend",
-        "--onefile",        # Eine einzelne ausführbare Datei erstellen
-        "--console",        # Terminal-Fenster öffnen lassen
-        "--paths", "."      # Add the current directory to the search path
+        "--onefile",        # eine einzige datei erstellen
+        "--console",        # terminal fenster offen lassen
+        "--paths", ".",     # jetzigen pfad zur suche hinzufügen
+        "--distpath", output_pfad,  # setze output pfad zu geradigem pfad
+        "--specpath", output_pfad,  # setze die .spec-datei zu jetzigem pfad
+        "--noconfirm",      # bestätigung (y/n) überspringen
+        "--clean",          # pyinstaller cache und temporäre dateien löschen
     ])
 
     if result.returncode == 0:
-        print("\n******************\nbuild finished\n******************\n")
+        print("\n******************\nbuild finished\n******************\n") # bestätigung das es fertig gebaut hat
     else:
-        print("build failed")
+        print("Build failed") # build fehlgeschlagen
         sys.exit(1)
 
 if __name__ == "__main__":
