@@ -2,16 +2,9 @@
 from backend.sql_connector import create_connection
 from backend.registrierung import register_schueler, register_betrieb
 from backend.login import login
-from backend.menu import schueler_menu, betrieb_menu, hwk_menu
+from backend.menu import display_main_menu, schueler_menu, betrieb_menu, hwk_menu
 
-# Funktion zur Anzeige des Hauptmenüs
-def display_main_menu():
-    print("Möchten Sie sich:")
-    print("  1) Anmelden")
-    print("  2) Registrieren")
-    print("  3) Abbrechen")
-    print()
-
+# Hauptfunktion des Programms
 def main():
     database = "praktikumsplattform"
     conn = create_connection("localhost", "root", "", database)

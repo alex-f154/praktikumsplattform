@@ -1,3 +1,11 @@
+# Funktion zur Anzeige des Hauptmenüs
+def display_main_menu():
+    print("Möchten Sie sich:")
+    print("  1) Anmelden")
+    print("  2) Registrieren")
+    print("  3) Abbrechen")
+    print()
+
 # Menü für Schüler
 def schueler_menu():
     while True:
