@@ -103,3 +103,10 @@ python main.py
 
 - Schüler sehen verfügbare Plätze und können sich mit der entsprechenden ID bewerben.
 - Betriebe sehen Bewerbungen mit dem Status „ja“.
+
+## Dokumentation
+Hier ist die Dokumentation für jede Datei im Projekt:
+
+- [Main](dokumentation/main.md)
+- [Registrierung](dokumentation/registrierung.md)
+- [Login](dokumentation/login.md)
