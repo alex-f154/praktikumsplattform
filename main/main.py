@@ -28,7 +28,7 @@ def main():
                     if user_type:
                         betrieb_menu()
                 else:
-                    print("Ungültige Auswahl\n")
+                    print("\nUngültige Auswahl\n")
             elif auswahl_typ == '2':
                 print("\nRegistrierung:")
                 print("  1) Schüler")
@@ -39,21 +39,21 @@ def main():
                 elif auswahl_art == '2':
                     register_betrieb(conn)
                 else:
-                    print("Ungültige Auswahl\n")
+                    print("\nUngültige Auswahl\n")
             elif auswahl_typ == '3':
-                print("Abbruch\n")
+                print("\nAbbruch\n")
                 break
             elif auswahl_typ == 'hwk-admin':
-                print("HWK-Admin Anmeldung:\n")
+                print("\nHWK-Admin Anmeldung:\n")
                 user_type = login(conn, 'HWK_kronenburg', 'Benutzername', 'Passwort')
                 if user_type:
                     hwk_menu()
             else:
-                print("Ungültige Auswahl\n")
+                print("\nUngültige Auswahl\n")
 
         conn.close()
     else:
-        print("Fehler! Keine Verbindung zur Datenbank.\n")
+        print("\nFehler! Keine Verbindung zur Datenbank.\n")
 
 if __name__ == '__main__':
     main()

@@ -29,14 +29,14 @@ def register_schueler(conn):
         cursor = conn.cursor()
         cursor.execute(sql, (username, password, wunschberuf, strasse, ort))
         conn.commit()
-        print("Schüler erfolgreich registriert \n")
+        print("Schüler erfolgreich registriert\n")
 
     elif zustimmung == "2":
-        print("Registrierung abgebrochen \n")
+        print("\nRegistrierung abgebrochen\n")
         return
     
     else:
-        print("Ungültige Eingabe. Registrierung abgebrochen.\n")
+        print("\nUngültige Eingabe. Registrierung abgebrochen.\n")
 
 # Funktion zur Registrierung eines neuen Betriebs
 def register_betrieb(conn):
