@@ -1,7 +1,8 @@
 # Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
 from backend.sql_connector import create_connection
 from backend.registrierung import register_schueler, register_betrieb
-from backend.login import login, schueler_menu, betrieb_menu, hwk_menu
+from backend.login import login
+from backend.menu import schueler_menu, betrieb_menu, hwk_menu
 
 # Hauptfunktion zum Ausführen des Programms
 def main():
