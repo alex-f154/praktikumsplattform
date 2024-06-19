@@ -38,7 +38,7 @@ def main():
                     print("\nUngültige Auswahl\n")
             elif auswahl_typ == '2':
                 os.system('cls')
-                print("\nRegistrierung:")
+                print("Registrierung:")
                 print("  [1] Schüler")
                 print("  [2] Betrieb")
                 auswahl_art = input("\nAuswahl: ").strip()
