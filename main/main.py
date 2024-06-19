@@ -1,5 +1,7 @@
 import os
 
+import os
+
 # Importieren der benutzerdefinierten Module aus dem 'backend'-Ordner
 from backend.sql_connector import create_connection
 from backend.registrierung import register_schueler, register_betrieb
@@ -37,6 +39,8 @@ def main():
             elif auswahl_typ == '2':
                 os.system('cls')
                 print("\nRegistrierung:")
+                print("  [1] Schüler")
+                print("  [2] Betrieb")
                 print("  [1] Schüler")
                 print("  [2] Betrieb")
                 auswahl_art = input("\nAuswahl: ").strip()

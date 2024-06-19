@@ -4,8 +4,8 @@ import os
 def register_schueler(conn):
     os.system('cls')
     print("\nStimmen Sie der Speicherung personenbezogener Daten zu?")
-    print("  1) Ja")
-    print("  2) Nein")
+    print("  [1] Ja")
+    print("  [2] Nein")
     zustimmung = input("\nAuswahl: ").strip()
 
     if zustimmung == "1":
