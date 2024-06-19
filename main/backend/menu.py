@@ -42,6 +42,7 @@ def betrieb_menu(conn, betrieb_id):
             # FUNKTION PRAKTIKUMSPLATZ ANBIETEN !!!!!!!!!
             registrierung_praktikumsplatz(conn, betrieb_id)
         elif auswahl == '2':
+            os.system('cls')
             print("Aktuelle Praktikas: ")
             anzeigen_praktikumsplaetze(conn, betrieb_id)
         elif auswahl == '3':

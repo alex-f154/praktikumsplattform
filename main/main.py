@@ -41,8 +41,6 @@ def main():
                 print("\nRegistrierung:")
                 print("  [1] Schüler")
                 print("  [2] Betrieb")
-                print("  [1] Schüler")
-                print("  [2] Betrieb")
                 auswahl_art = input("\nAuswahl: ").strip()
                 if auswahl_art == '1':
                     register_schueler(conn)
