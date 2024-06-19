@@ -39,12 +39,11 @@ def betrieb_menu(conn, betrieb_id):
         if auswahl == '1':
             os.system('cls')
             print("Praktikumsplatz anbieten: \n")
-            # FUNKTION PRAKTIKUMSPLATZ ANBIETEN !!!!!!!!!
-            registrierung_praktikumsplatz(conn, betrieb_id)
+            registrierung_praktikumsplatz(conn, betrieb_id) # funktion der registrierung von praktikumsplätzen
         elif auswahl == '2':
             os.system('cls')
             print("Aktuelle Praktikas: ")
-            anzeigen_praktikumsplaetze(conn, betrieb_id)
+            anzeigen_praktikumsplaetze(conn, betrieb_id) # funktion des anzeigen der praktikumsplätze, die man selbst anbietet
         elif auswahl == '3':
             print("Abmelden")
             break
@@ -62,16 +61,24 @@ def hwk_menu(conn):
         print("  [5] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
+            os.system('cls')
             print("\nSchüler: ")
-            # FUNKTION SCHÜLER ANSEHEN
+            # funktion schüler aufrufen
             cursor = conn.cursor()
             cursor.execute("SELECT username_schueler AS 'Name', Ort, Wunschberuf FROM Schueler")
             rows = cursor.fetchall()
             for row in rows:
                 print(row)
         elif auswahl == '2':
+            os.system('cls')
             print("\nBetriebe: ")
             # FUNKTION BETRIEBE ANSEHEN
+            cursor = conn.cursor()
+            cursor.execute("SELECT username_betrieb AS 'Name', Ort, Strasse FROM betrieb")
+            rows = cursor.fetchall()
+            for row in rows:
+                print(row)
+            
         elif auswahl == '3':
             print("\nPraktikumsangebote: ")
             # FUNKTION PRAKTIKUMSANGEBOTE

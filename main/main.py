@@ -15,15 +15,16 @@ def main():
 
     if conn is not None:
         while True:
-            display_main_menu()
-            auswahl_typ = input("Auswahl: ").strip()
+            display_main_menu() # funktion von menu.py aufrufen
+            auswahl_typ = input("Auswahl: ").strip() # .strip() sorgt dafür, dass überflüssige leerzeichen bei der eingabe entfernt werden
             os.system('cls')
-
+            
             if auswahl_typ == '1':
                 os.system('cls')
                 print("Login:")
                 print("  [1] Schüler")
                 print("  [2] Betrieb")
+                print("  [3] Hauptmenü")
                 auswahl_art = input("\nAuswahl: ").strip()
                 if auswahl_art == '1':
                     user_type = login(conn, 'Schueler', 'Username_Schueler', 'Passwort_Schueler')
@@ -35,19 +36,20 @@ def main():
                         betrieb_id = user[0]  # Annahme: BetriebID ist die erste Spalte im Ergebnis
                         betrieb_menu(conn, betrieb_id)
                 else:
-                    print("\nUngültige Auswahl\n")
+                    print("\nHauptmenü\n")
             elif auswahl_typ == '2':
                 os.system('cls')
                 print("Registrierung:")
                 print("  [1] Schüler")
                 print("  [2] Betrieb")
+                print("  [3] Hauptmenü")
                 auswahl_art = input("\nAuswahl: ").strip()
                 if auswahl_art == '1':
                     register_schueler(conn)
                 elif auswahl_art == '2':
                     register_betrieb(conn)
                 else:
-                    print("\nUngültige Auswahl\n")
+                    print("\nHauptmenü\n")
             elif auswahl_typ == '3':
                 os.system('cls')
                 print("\nProgramm Beenden\n")
