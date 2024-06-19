@@ -1,23 +1,27 @@
+import os
+from backend.betrieb import registrierung_praktikumsplatz, anzeigen_praktikumsplaetze
+
 # Funktion zur Anzeige des Hauptmenüs
 def display_main_menu():
+    os.system('cls')
     print("Möchten Sie sich:")
-    print("  1) Anmelden")
-    print("  2) Registrieren")
-    print("  3) Abbrechen")
+    print("  [1] Anmelden")
+    print("  [2] Registrieren")
+    print("  [3] Beenden")
     print()
 
 # Menü für Schüler
-def schueler_menu():
+def schueler_menu(conn):
     while True:
         print("\nSchüler Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Praktikumsplätze einsehen")
+        print("  [2] Option 2")
+        print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
-            print("Option 1 gewählt")
+            print("\nPraktikumsplätze: ")
         elif auswahl == '2':
-            print("Option 2 gewählt")
+            print("\nOption 2")
         elif auswahl == '3':
             print("Abmelden")
             break
@@ -25,17 +29,21 @@ def schueler_menu():
             print("Ungültige Auswahl")
 
 # Menü für Betrieb
-def betrieb_menu():
+def betrieb_menu(conn, betrieb_id):
     while True:
         print("\nBetrieb Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Praktikumsplatz anbieten")
+        print("  [2] Aktuelle Praktikas ansehen")
+        print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
-            print("Option 1 gewählt")
+            os.system('cls')
+            print("Praktikumsplatz anbieten: \n")
+            # FUNKTION PRAKTIKUMSPLATZ ANBIETEN !!!!!!!!!
+            registrierung_praktikumsplatz(conn, betrieb_id)
         elif auswahl == '2':
-            print("Option 2 gewählt")
+            print("Aktuelle Praktikas: ")
+            anzeigen_praktikumsplaetze(conn, betrieb_id)
         elif auswahl == '3':
             print("Abmelden")
             break
@@ -43,19 +51,34 @@ def betrieb_menu():
             print("Ungültige Auswahl")
 
 # Menü für HWK Kronenburg
-def hwk_menu():
+def hwk_menu(conn):
     while True:
         print("\nHWK Menü:")
-        print("  1) Option 1")
-        print("  2) Option 2")
-        print("  3) Abmelden")
+        print("  [1] Schüler ansehen")
+        print("  [2] Betriebe ansehen")
+        print("  [3] Praktikumsangebote ansehen")
+        print("  [4] Praktikumsvereinbarungen ansehen **IN PROGRESS**")
+        print("  [5] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
-            print("Option 1 gewählt")
+            print("\nSchüler: ")
+            # FUNKTION SCHÜLER ANSEHEN
+            cursor = conn.cursor()
+            cursor.execute("SELECT username_schueler AS 'Name', Ort, Wunschberuf FROM Schueler")
+            rows = cursor.fetchall()
+            for row in rows:
+                print(row)
         elif auswahl == '2':
-            print("Option 2 gewählt")
+            print("\nBetriebe: ")
+            # FUNKTION BETRIEBE ANSEHEN
         elif auswahl == '3':
-            print("Abmelden")
+            print("\nPraktikumsangebote: ")
+            # FUNKTION PRAKTIKUMSANGEBOTE
+        elif auswahl == '4':
+            print("\nPraktikumsvereinbarungen: ")
+            # FUNKTION PRAKTIKUMSVEREINBARUNG
+        elif auswahl == '5':
+            print("Abmelden\n")
             break
         else:
             print("Ungültige Auswahl")

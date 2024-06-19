@@ -1,11 +1,15 @@
+import os
+
 # Funktion zur Registrierung eines neuen Schülers
 def register_schueler(conn):
+    os.system('cls')
     print("\nStimmen Sie der Speicherung personenbezogener Daten zu?")
     print("  1) Ja")
     print("  2) Nein")
     zustimmung = input("\nAuswahl: ").strip()
 
     if zustimmung == "1":
+        os.system('cls')
         print("Speicherung Personenbezogener Daten zugestimmt.")
         username = input("\nGeben Sie den Benutzernamen ein: ")
         # Passwort-Eingabe und Bestätigung
@@ -40,6 +44,7 @@ def register_schueler(conn):
 
 # Funktion zur Registrierung eines neuen Betriebs
 def register_betrieb(conn):
+    os.system('cls')
     username = input("Geben Sie den Benutzernamen ein: ")
     while True:
             password = input("Geben Sie das Passwort ein: ")

@@ -1,2 +1,2 @@
-SELECT Verfügbarkeit, Bezahlung, Zeitraum, Beruf
+SELECT *
 from praktikumsplattform.praktikumsplatz
