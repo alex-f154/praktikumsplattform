@@ -1,5 +1,6 @@
 import os
-from backend.betrieb import registrierung_praktikumsplatz, anzeigen_praktikumsplaetze
+from backend.betrieb import registrierung_praktikumsplatz, anzeigen_praktikumsplaetze_betrieb
+from backend.schueler import anzeigen_praktikumsplaetze_schueler
 
 # Funktion zur Anzeige des Hauptmenüs
 def display_main_menu():
@@ -19,7 +20,8 @@ def schueler_menu(conn):
         print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
-            print("\nPraktikumsplätze: ")
+            os.system('cls')
+            anzeigen_praktikumsplaetze_schueler(conn)
         elif auswahl == '2':
             print("\nOption 2")
         elif auswahl == '3':
@@ -42,8 +44,7 @@ def betrieb_menu(conn, betrieb_id):
             registrierung_praktikumsplatz(conn, betrieb_id) # funktion der registrierung von praktikumsplätzen
         elif auswahl == '2':
             os.system('cls')
-            print("Aktuelle Praktikas: ")
-            anzeigen_praktikumsplaetze(conn, betrieb_id) # funktion des anzeigen der praktikumsplätze, die man selbst anbietet
+            anzeigen_praktikumsplaetze_betrieb(conn, betrieb_id) # funktion des anzeigen der praktikumsplätze, die man selbst anbietet
         elif auswahl == '3':
             print("Abmelden")
             break

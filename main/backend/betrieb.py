@@ -37,7 +37,7 @@ def registrierung_praktikumsplatz(conn, betrieb_id):
     print("Praktikumsplatz erfolgreich angeboten\n")
 
 # funktion zum anzeigen von praktikumsplätzen
-def anzeigen_praktikumsplaetze(conn, betrieb_id):
+def anzeigen_praktikumsplaetze_betrieb(conn, betrieb_id):
     cursor = conn.cursor()
     sql = '''SELECT PlatzID, Verfügbarkeit, Bezahlung, Zeitraum, Beruf 
              FROM Praktikumsplatz 
