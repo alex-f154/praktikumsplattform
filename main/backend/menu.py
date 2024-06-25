@@ -16,14 +16,14 @@ def schueler_menu(conn):
     while True:
         print("\nSchüler Menü:")
         print("  [1] Praktikumsplätze einsehen")
-        print("  [2] Option 2")
+        print("  [2] Praktikumsplatz vereinbaren **WARTUNGSARBEITEN**")
         print("  [3] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':
             os.system('cls')
             anzeigen_praktikumsplaetze_schueler(conn)
         elif auswahl == '2':
-            print("\nOption 2")
+            print("\nPraktikumsplatz vereinbaren: ")
         elif auswahl == '3':
             print("Abmelden")
             break
@@ -58,7 +58,7 @@ def hwk_menu(conn):
         print("  [1] Schüler ansehen")
         print("  [2] Betriebe ansehen")
         print("  [3] Praktikumsangebote ansehen")
-        print("  [4] Praktikumsvereinbarungen ansehen **IN PROGRESS**")
+        print("  [4] Praktikumsvereinbarungen ansehen **WARTUNGSARBEITEN**")
         print("  [5] Abmelden")
         auswahl = input("\nAuswahl: ").strip()
         if auswahl == '1':

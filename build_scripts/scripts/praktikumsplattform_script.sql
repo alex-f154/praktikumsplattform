@@ -20,7 +20,7 @@ CREATE TABLE Schueler (
  
 CREATE TABLE Praktikumsplatz (
     PlatzID INT AUTO_INCREMENT PRIMARY KEY,
-    Verfügbarkeit DATE,
+    Beginn DATE,
     Bezahlung BOOLEAN,
     Zeitraum VARCHAR(100),
     Beruf VARCHAR(100),

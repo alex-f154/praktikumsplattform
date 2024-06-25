@@ -5,9 +5,9 @@ import datetime
 def registrierung_praktikumsplatz(conn, betrieb_id):
     while True:
         try:
-            Verfügbarkeit = input("Verfügbarkeit (YYYY-MM-DD): ").strip()
+            Beginn = input("Beginn (YYYY-MM-DD): ").strip()
             # prüfen ob Datum im richtigen Format ist
-            datetime.datetime.strptime(Verfügbarkeit, "%Y-%m-%d")
+            datetime.datetime.strptime(Beginn, "%Y-%m-%d")
             break
         except ValueError:
             os.system('cls')
@@ -29,17 +29,17 @@ def registrierung_praktikumsplatz(conn, betrieb_id):
     Zeitraum = input("Zeitraum: ").strip()
     Beruf = input("Beruf: ").strip()
 
-    sql = '''INSERT INTO Praktikumsplatz (Verfügbarkeit, Bezahlung, Zeitraum, Beruf, BetriebID) 
+    sql = '''INSERT INTO Praktikumsplatz (Beginn, Bezahlung, Zeitraum, Beruf, BetriebID) 
              VALUES (%s, %s, %s, %s, %s)'''
     cursor = conn.cursor()
-    cursor.execute(sql, (Verfügbarkeit, Bezahlung, Zeitraum, Beruf, betrieb_id))
+    cursor.execute(sql, (Beginn, Bezahlung, Zeitraum, Beruf, betrieb_id))
     conn.commit()
     print("Praktikumsplatz erfolgreich angeboten\n")
 
 # funktion zum anzeigen von praktikumsplätzen
 def anzeigen_praktikumsplaetze_betrieb(conn, betrieb_id):
     cursor = conn.cursor()
-    sql = '''SELECT PlatzID, Verfügbarkeit, Bezahlung, Zeitraum, Beruf 
+    sql = '''SELECT PlatzID, Beginn, Bezahlung, Zeitraum, Beruf 
              FROM Praktikumsplatz 
              WHERE BetriebID = %s'''
     cursor.execute(sql, (betrieb_id,))
@@ -48,6 +48,6 @@ def anzeigen_praktikumsplaetze_betrieb(conn, betrieb_id):
     if rows:
         print("\nAngebotene Praktikumsplätze:")
         for row in rows:
-            print(f"Verfügbarkeit: {row[1]}, Bezahlung: {'Ja' if row[2] else 'Nein'}, Zeitraum: {row[3]}, Beruf: {row[4]}")
+            print(f"Beginn: {row[1]}, Bezahlung: {'Ja' if row[2] else 'Nein'}, Zeitraum: {row[3]}, Beruf: {row[4]}")
     else:
         print("\nKeine Praktikumsplätze gefunden.")
